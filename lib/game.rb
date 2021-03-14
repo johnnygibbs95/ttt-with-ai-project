@@ -70,7 +70,18 @@ class Game
     end
   end
 
-  def play_again
+  def play_again(user_input)
+    binding.pry
+    puts "would you like to play again? 'yes/no'"
+    gets.strip
+    if user_input == "yes"
+        @board.reset!
+        new
+    elsif user_input == "no"
+        puts "Good game!"
+    else
+        puts "That is not a valid response, please type yes/no"
+    end
   end
     
 

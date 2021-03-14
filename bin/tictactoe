@@ -4,8 +4,12 @@ require_relative '../config/environment'
 
 puts "Welcome! Pick your first move with numbers 1 through 9!"
 game = Game.new
-until game.won?
+if !game.won?
   game.play
+elsif game.over?
+    game.play_again(user)
 end
 
-puts "would you like to play again?!"
+
+
+
